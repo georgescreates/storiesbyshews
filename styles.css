@@ -1,0 +1,514 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Satisfy&display=swap');
+
+/* Base styles */
+:root{
+    --brand-color: #cb6fac;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+header {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+/* Navigation Section */
+#nav-section, #hero-section {
+    width: 90%;
+    max-width: 1400px;
+}
+
+#nav-section {
+    height: 7vh;
+    min-height: 60px;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nav-section ul {
+    display: flex;
+    column-gap: 1.5rem;
+    font-size: 0.875rem;
+}
+
+#nav-section ul li {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0.25rem;
+    overflow: hidden;
+    font-weight: 300;
+}
+
+#nav-section ul li.active-item {
+    font-weight: bold;
+}
+
+.active-item-dot {
+    width: 0.3rem;
+    height: 0.3rem;
+    display: block;
+    border-radius: 100%;
+    background-color: black;
+    transform: translateY(200%);
+}
+
+.active-item-dot.active {
+    transform: translateY(0%);
+}
+
+#nav-section ul li a {
+    text-decoration: none;
+    color: black;
+    text-transform: capitalize;
+}
+
+#nav-section ul li a:hover {
+    color: var(--brand-color);
+}
+
+#nav-section ul li a:hover ~ .active-item-dot {
+    background-color: var(--brand-color);
+}
+
+#logo-tag {
+    text-align: center;
+    line-height: 0.9;
+    font-family: 'Abril Fatface', sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+#logo-tag-break {
+    font-family: 'satisfy', sans-serif;
+    color: var(--brand-color);
+}
+
+#connexions-modal-trigger-btn {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--brand-color);
+}
+
+/* Hero Section */
+#hero-section {
+    height: 93vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 3rem;
+    padding: 2rem 0;
+}
+
+/* Shews Deck */
+#shews-deck {
+    width: 25vh;
+    height: 25vh;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shews-card {
+    background-color: #ececec;
+    aspect-ratio: 2 / 3;
+    height: 25vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease, filter 0.3s ease, z-index 0s;
+    filter: hue-rotate(-90deg);
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+}
+
+/* Position each card with very small offsets for a tight deck */
+.shews-card:nth-child(1) { transform: rotate(-8deg) translate(-3px, 0px); z-index: 1; }
+.shews-card:nth-child(2) { transform: rotate(-6deg) translate(-2px, -1px); z-index: 2; }
+.shews-card:nth-child(3) { transform: rotate(-4deg) translate(-1px, 0px); z-index: 3; }
+.shews-card:nth-child(4) { transform: rotate(-2deg) translate(-1px, 1px); z-index: 4; }
+.shews-card:nth-child(5) { transform: rotate(0deg) translate(0px, 0px); z-index: 5; }
+.shews-card:nth-child(6) { transform: rotate(2deg) translate(1px, -1px); z-index: 6; }
+.shews-card:nth-child(7) { transform: rotate(4deg) translate(1px, 0px); z-index: 7; }
+.shews-card:nth-child(8) { transform: rotate(6deg) translate(2px, 1px); z-index: 8; }
+.shews-card:nth-child(9) { transform: rotate(8deg) translate(3px, 0px); z-index: 9; }
+
+.shews-card:hover {
+    transform: rotate(0deg) scale(1.1) !important;
+    z-index: 20 !important;
+    filter: hue-rotate(0deg);
+}
+
+/* Headline */
+#headline {
+    position: relative;
+    padding: 0 1rem;
+}
+
+#headline-tag {
+    text-align: center;
+    line-height: 0.95;
+    font-size: clamp(2rem, 5vw, 4.5rem);
+    font-family: 'Abril Fatface', sans-serif;
+    font-weight: 400;
+}
+
+#breaking-text {
+    font-size: clamp(2.2rem, 5.5vw, 5rem);
+    font-family: 'Satisfy', sans-serif;
+    color: var(--brand-color);
+}
+
+#strikethrough-headline-svg {
+    position: absolute;
+    transform: translate(40%, -100%);
+    width: clamp(150px, 40%, 298px);
+    height: auto;
+}
+
+#underline-text {
+    position: absolute;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-family: 'Satisfy', sans-serif;
+    color: var(--brand-color);
+    left: 36%;
+    bottom: -20%;
+}
+
+/* Audio Patches Slider Container */
+#audio-patches-slider-container {
+    height: auto;
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    column-gap: 1.5rem;
+    overflow: hidden;
+    overflow-x: auto;
+    position: relative;
+}
+
+.audio-patches-slider {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 1.5rem;
+    animation: slideLeft 100s linear infinite;
+}
+
+.audio-patch {
+    width: clamp(280px, 90vw, 23rem);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    row-gap: 1rem;
+    padding: 0.75rem 0.75rem;
+    border-radius: 0.5rem;
+    border: 2px solid #f3f3f3;
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-100% - 1.5rem));
+    }
+}
+
+#audio-patches-slider-container:hover .audio-patches-slider {
+    animation-play-state: paused;
+}
+
+#audio-patches-slider-container::-webkit-scrollbar {
+    display: none;
+}
+
+.audio-patch:hover {
+    background-color: #f9f9f9;
+}
+
+.audio-patch.active {
+    border: 2px solid var(--brand-color);
+}
+
+.audio-patch-play-pause-btn, .save-story-btn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.audio-patch-top-part {
+    display: flex;
+    column-gap: 1rem;
+    height: auto;
+    width: 100%;
+}
+
+.audio-shews-info {
+    font-family: 'Plus jakarta Sans', sans-serif;
+}
+
+.audio-shews-display-name {
+    font-size: 0.8rem;
+    font-family: 'Satisfy';
+    color: #a6a6a6;
+}
+
+.audio-shews-episode-title {
+    font-size: 1rem;
+}
+
+.audio-countdown {
+    font-size: 0.65rem;
+    width: 10%;
+}
+
+.audio-patch-middle-part {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    width: 100%;
+    height: 2rem;
+}
+
+.audio-soundwave-container {
+    height: 100%;
+    width: 90%;
+}
+
+.audio-patch-bottom-part {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: auto;
+    width: 100%;
+}
+
+.audio-patch-bottom-part-infos {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+}
+
+.audio-patch-bottom-part-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.25rem;
+}
+
+.audio-patch-bottom-part-cell small {
+    font-size: 0.75rem;
+    color: #a6a6a6;
+}
+
+/* Mobile menu toggle (hidden by default) */
+#mobile-menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+}
+
+#mobile-menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1200px) {
+    #nav-section, #hero-section {
+        width: 95%;
+    }
+    
+    .audio-patch {
+        width: clamp(280px, 80vw, 20rem);
+    }
+}
+
+@media (max-width: 992px) {
+    #nav-section {
+        padding: 0 1rem;
+    }
+    
+    .shews-card {
+        height: 20vh;
+    }
+    
+    #hero-section {
+        row-gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Show mobile menu toggle */
+    #mobile-menu-toggle {
+        display: block;
+        z-index: 20;
+    }
+    
+    /* Hide navigation lists on mobile */
+    #left-nav, #right-nav {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        height: 100vh;
+        background-color: white;
+        flex-direction: column;
+        padding: 80px 2rem;
+        z-index: 10;
+        transition: left 0.3s ease;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    }
+    
+    #left-nav.active, #right-nav.active {
+        left: 0;
+    }
+    
+    #nav-section ul li {
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Adjust card size */
+    .shews-card {
+        height: 18vh;
+    }
+    
+    /* Adjust headline */
+    #headline-tag {
+        font-size: clamp(1.8rem, 6vw, 3rem);
+    }
+    
+    #breaking-text {
+        font-size: clamp(2rem, 7vw, 3.5rem);
+    }
+    
+    #underline-text {
+        font-size: clamp(0.8rem, 3vw, 1.2rem);
+    }
+    
+    /* Hide some audio patch info on mobile */
+    .audio-patch-bottom-part-infos {
+        overflow-x: auto;
+        width: 70%;
+    }
+    
+    .chapter-count-info, .alternate-count-info {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    #nav-section {
+        height: 60px;
+        padding: 0 0.5rem;
+    }
+    
+    #logo-tag {
+        font-size: 1rem;
+    }
+    
+    .shews-card {
+        height: 15vh;
+    }
+    
+    #hero-section {
+        row-gap: 1.5rem;
+        justify-content: flex-start;
+        padding-top: 4rem;
+    }
+    
+    /* Adjust slider */
+    #audio-patches-slider-container {
+        width: 95%;
+    }
+    
+    .audio-patch {
+        padding: 0.5rem;
+        row-gap: 0.5rem;
+    }
+    
+    /* Hide more audio patch info */
+    .favorite-info {
+        display: none;
+    }
+    
+    /* Stack cards more compactly */
+    .shews-card:nth-child(odd) { 
+        transform: rotate(-3deg) translate(-2px, 0px);
+    }
+    .shews-card:nth-child(even) { 
+        transform: rotate(3deg) translate(2px, 0px);
+    }
+}
+
+/* Dark mode (optional) */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #f1f1f1;
+    }
+    
+    #nav-section ul li a {
+        color: #f1f1f1;
+    }
+    
+    .active-item-dot {
+        background-color: #f1f1f1;
+    }
+    
+    .audio-patch {
+        border-color: #333;
+        background-color: #252525;
+    }
+    
+    .audio-patch:hover {
+        background-color: #2a2a2a;
+    }
+    
+    #mobile-menu-toggle span {
+        background-color: #f1f1f1;
+    }
+}
